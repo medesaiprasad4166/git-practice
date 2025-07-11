@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class GradeChecker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String[] students = new String[3];
+        int[] marks = new int[3];
+
+        // Input student names and marks
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter student name: ");
+            students[i] = sc.nextLine();
+
+            System.out.print("Enter marks (0–100): ");
+            marks[i] = sc.nextInt();
+            sc.nextLine(); // Consume newline
+        }
+
+        // Display results
+        System.out.println("\n--- Student Grades ---");
+        for (int i = 0; i < 3; i++) {
+            String grade = getGrade(marks[i]);
+            System.out.println(students[i] + " scored " + marks[i] + " → Grade: " + grade);
+        }
+    }
+
+    // Method to calculate grade based on marks
+    public static String getGrade(int marks) {
+        if (marks >= 90) return "A";
+        else if (marks >= 75) retu
+

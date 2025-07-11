@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Function to calculate grade based on marks
+char getGrade(int marks) {
+    if (marks >= 90) return 'A';
+    else if (marks >= 75) return 'B';
+    else if (marks >= 60) return 'C';
+    else if (marks >= 40) return 'D';
+    else return 'F';
+}
+
+int main() {
+    int n, marks;
+    char name[50];
+
+    printf("Enter student name: ");
+    scanf("%s", name);
+
+    printf("Enter student marks (0-100): ");
+    scanf("%d", &marks);
+
+    char grade = getGrade(marks);
+
+    printf("\nStudent Name: %s\n", name);
+    printf("Marks: %d\n", marks);
+    printf("Grade: %c\n", grade);
+
+    return 0;
+}
+

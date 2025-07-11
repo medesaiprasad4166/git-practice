@@ -1,0 +1,34 @@
+-- 1. Create a database
+CREATE DATABASE StudentDB;
+
+-- 2. Use the database
+USE StudentDB;
+
+-- 3. Create a table for students
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    grade VARCHAR(2)
+);
+
+-- 4. Insert sample student records
+INSERT INTO students (name, age, grade) VALUES ('Alice', 18, 'A');
+INSERT INTO students (name, age, grade) VALUES ('Bob', 19, 'B');
+INSERT INTO students (name, age, grade) VALUES ('Charlie', 17, 'C');
+
+-- 5. Retrieve all students
+SELECT * FROM students;
+
+-- 6. Find students with grade A
+SELECT * FROM students WHERE grade = 'A';
+
+-- 7. Update a student's grade
+UPDATE students SET grade = 'A+' WHERE name = 'Bob';
+
+-- 8. Delete a student
+DELETE FROM students WHERE name = 'Charlie';
+
+-- 9. Count total students
+SELECT COUNT(*) AS*
+

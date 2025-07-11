@@ -1,0 +1,41 @@
+# Simple To-Do List Application
+
+def load_tasks():
+    try:
+        with open("tasks.txt", "r") as file:
+            return file.read().splitlines()
+    except FileNotFoundError:
+        return []
+
+def save_tasks(tasks):
+    with open("tasks.txt", "w") as file:
+        file.write("\n".join(tasks))
+
+def display_tasks(tasks):
+    print("\nYour Tasks:")
+    for i, task in enumerate(tasks, 1):
+        print(f"{i}. {task}")
+
+def main():
+    tasks = load_tasks()
+    while True:
+        display_tasks(tasks)
+        print("\nOptions: [1] Add Task  [2] Remove Task  [3] Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            task = input("Enter new task: ")
+            tasks.append(task)
+        elif choice == "2":
+            num = int(input("Enter task number to remove: "))
+            if 1 <= num <= len(tasks):
+                tasks.pop(num - 1)
+        elif choice == "3":
+            break
+        else:
+            print("Invalid choice!")
+    
+    save_tasks(tasks)
+
+main()
+

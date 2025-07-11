@@ -1,0 +1,29 @@
+using System;
+
+namespace SalaryApp
+{
+    class Employee
+    {
+        public string Name;
+        public double BasicSalary;
+
+        public double CalculateNetSalary()
+        {
+            double hra = 0.2 * BasicSalary;
+            double da = 0.1 * BasicSalary;
+            return BasicSalary + hra + da;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Employee emp = new Employee();
+
+            Console.Write("Enter employee name: ");
+            emp.Name = Console.ReadLine();
+
+            Console.Write("Enter basic salary: ");
+            emp.BasicSalary = Conv
+
