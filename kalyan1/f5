@@ -1,0 +1,13 @@
+using System;
+
+class Greet {
+    static void Main() {
+        sayHello("Alice");
+        sayHello("Bob");
+    }
+
+    static void sayHello(string name) {
+        Console.WriteLine("Hello, " + name + "!");
+    }
+}
+
